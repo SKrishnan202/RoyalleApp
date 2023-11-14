@@ -8,32 +8,32 @@ const data = [
   {
     image: require("../assets/icons/filter.png"),
     title: 'Order New Air Filters',
-    number: '60%',
+   // number: '60%',
   },
   {
     image: require("../assets/icons/twodrop.png"),
     title: 'Order Mineral Cartridge',
-    number: '18 pts',
+   // number: '18 pts',
   },
   {
     image: require("../assets/icons/twodrop.png"),
     title: 'Order Low Humidity Service Pack',
-    number: '25%',
+   // number: '25%',
   },
   {
     image: require("../assets/icons/twodrop.png"),
     title: 'Order Charcoal Cartridge',
-    number: 112,
+   // number: 112,
   },
   {
     image: require("../assets/icons/twodrop.png"),
     title: 'Order UV Led Cartridge',
-    number: 468,
+   // number: 468,
   },
   {
     image: require("../assets/icons/twodrop.png"),
     title: 'Order Genesis Accessories',
-    number: 13,
+   // number: 13,
   },
 ];
 

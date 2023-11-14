@@ -11,23 +11,23 @@ const data = [
     number: '60%',
   },
   {
-    image: require("../assets/icons/drop.png"),
-    title: 'Gal/H',
-    number: 4.68,
+    image: require("../assets/icons/bolt.png"),
+    title: 'System Power',
+    number: '18 kWh/h',
   },
   {
     image: require("../assets/icons/temp.png"),
-    title: 'System Power',
-    number: '18 kWh',
+    title: 'Temperature',
+    number: 87.6,
   },null,
   {
     image: require("../assets/icons/humid.png"),
-    title: 'Wind',
-    number: '30 knt',
+    title: 'gal/h',
+    number: 4.68,
   },
   {
     image: require("../assets/icons/drops.png"),
-    title: 'Gal/Day',
+    title: 'gal/day',
     number: 112.3,
   },
 ];
@@ -38,15 +38,15 @@ const Home = () => {
   const [buttonTitle, setButtonTitle] = useState("Make Water!");
   const [buttonColors, setButtonColors] = useState({
     railFillBackgroundColor: "#007fff",
-    thumbIconBackgroundColor: "#007fff",
-    railBackgroundColor: "green",
+    thumbIconBackgroundColor: "#ffffff",  // add in "droplet.png"
+    railBackgroundColor: "green",   // linear gradient
   });
 
   const handleSwipeSuccess = () => {
 
     // Toggle the button title
     if (buttonTitle === "Make Water!") {
-      setButtonTitle("Water's running");
+      setButtonTitle("Stop");
     } else {
       setButtonTitle("Make Water!");
     }

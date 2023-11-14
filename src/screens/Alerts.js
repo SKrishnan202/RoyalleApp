@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, FlatList, Switch } from 'react-native';
+import { StyleSheet, Text, View, FlatList, Switch, Image } from 'react-native';
 import Card from '../components/Card';
 
 
@@ -8,22 +8,22 @@ const data = [
   {
     image: require("../assets/icons/pump.png"),
     title: 'Pump Failure!',
-    number: '60%',
+    //number: '60%',
   },
   {
     image: require("../assets/icons/uv.png"),
     title: 'Change UV Light',
-    number: '18 kWh',
+    //number: '18 kWh',
   },
   {
     image: require("../assets/icons/outage.png"),
     title: 'Power Outage System Shutdown',
-    number: 4.68,
+    //number: 4.68,
   },
   {
     image: require("../assets/icons/filter.png"),
     title: 'Replace Air Filters',
-    number: 112.3,
+    //number: 112.3,
   },
 ];
 
@@ -43,6 +43,8 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
+         {/*   <Image source="../assets/icons/outage.png" />     <Text style={styles.maintenance}>MAINTENANCE</Text> */}
+          {/*  <Image source="../assets/icons/warning.png" />  <Text style={styles.maintenance}>WARNINGS</Text> */}
       <FlatList
         data={data}
         renderItem={renderItem}
@@ -70,4 +72,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 4,
     paddingBottom: 49,
   },
+  maintenance: {
+    fontFamily: 'Arial',
+    fontSize: 30,
+    fontWeight: 'bold',
+  }
 });

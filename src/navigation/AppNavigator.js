@@ -12,6 +12,8 @@ import {
     faList,
     faHome,
     faListUl,
+    // faDroplet,
+    // faWaveSquare
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import Home from '../screens/Home';
@@ -20,6 +22,8 @@ import Services2 from '../screens/Services2';
 import Services3 from '../screens/Services3';
 import Alerts from '../screens/Alerts';
 import Settings from '../screens/Settings';
+// import Energy from '../screens/Energy';
+//import Water from '../screens/Water';
 
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
@@ -104,7 +108,29 @@ function TabNavigator() {
                         <FontAwesomeIcon icon={faGear} size={size} color={color} />
                     ),
                 }} />
-        </BottomTabs.Navigator>
+       {/* <BottomTabs.Screen name="Tab7" component={Energy}
+                options={{
+                    headerTitle: 'Energy',
+                    tabBarLabel: 'Energy',
+                    tabBarIcon: ({ color, size }) => (
+                        <FontAwesomeIcon icon={faWaveSquare} size={size} color={color} />
+                    ),
+                }} />
+
+         <BottomTabs.Screen name="Tab8" component={Water}
+                options={{
+                    headerTitle: 'Water',
+                    tabBarLabel: 'Water',
+                    tabBarIcon: ({ color, size }) => (
+                        <FontAwesomeIcon icon={faDroplet} size={size} color={color} />
+                    ),
+                }} />
+
+            */}
+
+
+     </BottomTabs.Navigator>
+ 
     );
 }
 
@@ -123,6 +149,8 @@ function StackNavigator() {
             <Stack.Screen name='Services3' component={Services3} />
             <Stack.Screen name='Alerts' component={Alerts} />
             <Stack.Screen name='Settings' component={Settings} />
+         {/*   <Stack.Screen name='Energy' component={Energy} />
+            <Stack.Screen name='Water' component={Water} />  */}
         </Stack.Navigator>
     )
 }
@@ -205,6 +233,34 @@ const SettingsStack = () => {
     );
 }
 
+{/*
+
+const EnergyStack = () => {
+    return (
+        <Stack.Navigator
+            screenOptions={{ headerShown: false }}
+        >
+            <Stack.Screen
+                name="energy"
+                component={Energy}
+            />
+        </Stack.Navigator>
+    );
+}
+
+const WaterStack = () => {
+    return (
+        <Stack.Navigator
+            screenOptions={{ headerShown: false }}
+        >
+            <Stack.Screen
+                name="water"
+                component={Water}
+            />
+        </Stack.Navigator>
+    );
+*/}
+
 function MainNavigator() {
     return (
         <Drawer.Navigator
@@ -247,6 +303,15 @@ function MainNavigator() {
             <Drawer.Screen name="Settings" component={Settings} options={{
                 drawerIcon: () => <FontAwesomeIcon icon={faGear} color={'#007fff'} size={20} />
             }} />
+
+            {/* 
+               <Drawer.Screen name="Energy" component={Energy} options={{
+                drawerIcon: () => <FontAwesomeIcon icon={faWaveSquare} color={'#007fff'} size={20} />
+            }} />
+               <Drawer.Screen name="Water" component={Water} options={{
+                drawerIcon: () => <FontAwesomeIcon icon={faDroplet} color={'#007fff'} size={20} />
+            }} />
+            */}
 
         </Drawer.Navigator>
     )
@@ -294,7 +359,23 @@ function CustomDrawerContent(props) {
                 icon={() => <FontAwesomeIcon icon={faGear} color={'#007fff'} size={20} />}
                 onPress={() => props.navigation.navigate('Home', { screen: 'Tab6' })}
             />
+       {/*
+             <DrawerItem
+                label="Energy"
+                icon={() => <FontAwesomeIcon icon={faWaveSquare} color={'#007fff'} size={20} />}
+                onPress={() => props.navigation.navigate('Energy', { screen: 'Tab6' })}
+            />
 
+                  <DrawerItem
+                label="Water"
+                icon={() => <FontAwesomeIcon icon={faDroplet} color={'#007fff'} size={20} />}
+                onPress={() => props.navigation.navigate('Water', { screen: 'Tab6' })}
+            />
+       
+       
+       
+       
+       */}
 
 
         </DrawerContentScrollView>
@@ -311,3 +392,6 @@ const AppContainer = () => {
 };
 
 export default AppContainer;
+
+
+// horizontal overflow needs to be placed on bottom navigator
