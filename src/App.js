@@ -17,3 +17,5 @@ export default function App() {
   );
 
 }
+
+// Add in Linear and Text Gradient - https://codingwithrashid.com/how-to-create-gradient-text-in-react-native/
