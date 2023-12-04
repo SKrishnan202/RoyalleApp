@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity, Linking } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faBeer } from '@fortawesome/free-solid-svg-icons';
 //import { GradientText } from './screens/GradientText';
@@ -31,7 +31,10 @@ const Support = () => {
       >
     <View style={styles.buttonContainer}>
     <Text style={styles.text3}>
-      FAQs and TROUBLESHOOTING GUIDE
+     <Text style={{color: '#ffffff'}}
+              onPress={() => Linking.openURL('https://zerofriction.com/rangefinders/distance-pro-gps-gloves/distance-pro-gps-glove-faqs-trouble-shooting-guide')}> 
+              FAQs and TROUBLESHOOTING GUIDE
+     </Text>
     </Text>
     </View>
   </TouchableOpacity>
@@ -41,7 +44,10 @@ const Support = () => {
       >
     <View style={styles.buttonContainer}>
     <Text style={styles.text2}>
+    <Text style={{color: '#ffffff'}}
+                   onPress={() => Linking.openURL('https://zerofriction.com/rangefinders/distance-pro-gps-gloves/distance-pro-gps-glove-user-manual')}>
       BASIC INSTRUCTIONS MANUAL
+      </Text>
     </Text>
     </View>
     </TouchableOpacity>
@@ -51,7 +57,10 @@ const Support = () => {
       >
     <View style={styles.buttonContainer}>
     <Text style={styles.text3}>
+    <Text style={{color: '#ffffff'}}
+                   onPress={() => Linking.openURL('https://zerofriction.com/rangefinders/distance-pro-gps-gloves/distance-pro-gps-glove-user-manual')}>
       SUPPLEMENTAL INSTRUCTIONS MANUAL
+    </Text>
     </Text>
     </View>
     </TouchableOpacity>

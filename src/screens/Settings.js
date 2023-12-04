@@ -1,8 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity } from 'react-native';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faBeer } from '@fortawesome/free-solid-svg-icons';
 //import { GradientText } from './screens/GradientText';
 //import { LinearGradient } from 'expo-linear-gradient';
 //import MaskedView from '@react-native-masked-view/masked-view';
