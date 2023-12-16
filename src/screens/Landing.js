@@ -1,40 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import { GradientText } from './screens/GradientText';
+import { GradientText } from '../components/GradientText';
 
-export default function App() {
+export default function App({ navigation }) {
   return (
     <View style={styles.container}>
-           <Image source={require('./assets/zerofrictionbanner.png')} style={{ width: 330, height: 40, alignSelf: 'center'}} />
-      
-      <GradientText text="ENTER" style={{fontSize: 60}}/>
-      <Image source={require('./assets/zerofrictionglove.png')} style={{ width: 195, height: 300, alignSelf: 'center'}} />
-  <View style={styles.banner}>
-    <View style={styles.banner1}>
-      <View style={styles.banner2}>
-  <Image source={require('./assets/gpsglove.png')} style={{ width: 330, height: 90, alignSelf: 'center', marginTop: 10}} />
-     </View>
-  </View>
-  </View>
+      <TouchableOpacity onPress={() => navigation.navigate('Tabs')}>
+        <GradientText text="ENTER" style={{ fontSize: 60 }} />
+      </TouchableOpacity>
+      <Image source={require('../../assets/zerofrictionglove.png')} style={{ width: 195, height: 300, alignSelf: 'center' }} />
+      <View style={styles.banner}>
+        <View style={styles.banner1}>
+          <View style={styles.banner2}>
+            <Image source={require('../../assets/gpsglove.png')} style={{ width: 330, height: 90, alignSelf: 'center', marginTop: 10 }} />
+          </View>
+        </View>
+      </View>
 
-  <TouchableOpacity
-        //  onPress={() => navigation.navigate('Terms')}
+      <View style={styles.bottom}>
+        
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Terms')}
         activeOpacity={0.5}>
         <Text style={styles.buttonTextStyle}>
-        TERMS AND CONDITIONS
-       </Text>
-  </TouchableOpacity>
+          TERMS AND CONDITIONS
+        </Text>
+      </TouchableOpacity>
 
-  <TouchableOpacity
-        //  onPress={() => navigation.navigate('Privacy')}
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Privacy')}
         activeOpacity={0.5}>
         <Text style={styles.buttonTextStyle}>
-        PRIVACY POLICY
-       </Text>
-  </TouchableOpacity>
+          PRIVACY POLICY
+        </Text>
+      </TouchableOpacity>
+      </View>
 
-</View>
+
+    </View>
   );
 }
 
@@ -52,10 +55,10 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   buttonTextStyle: {
-  //  fontFamily: 'Arial',
+    //  fontFamily: 'Arial',
     color: '#ffffff',
     fontSize: 15,
-    textAlign: 'left',
+    textAlign: 'center',
     fontWeight: 'bold',
   },
   banner1: {
@@ -76,12 +79,18 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   bannerText: {
-  //  fontFamily: 'Arial',
+    //  fontFamily: 'Arial',
     fontSize: 20,
     textAlign: 'center',
     marginTop: 7,
     fontWeight: 'bold'
   },
+  bottom:{
+    width:'99%',
+    marginTop:20,
+    flexDirection:'row',
+    justifyContent:'space-around',
+  }
 });
 
 

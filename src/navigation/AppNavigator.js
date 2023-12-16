@@ -8,12 +8,17 @@ import {
     faScrewdriverWrench,
     faHome,
     faHeadphones,
+    faBackward,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import Home from '../screens/Home';
 import Resources from '../screens/Resources';
 import Support from '../screens/Support';
 import Settings from '../screens/Settings';
+import Landing from '../screens/Landing'
+import Terms from '../screens/Terms'
+import Privacy from '../screens/Privacy'
+import GolfCourse from '../screens/GolfCourse';
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -29,6 +34,7 @@ function TabNavigator() {
                 tabBarLabelStyle: { paddingBottom: 3, fontSize: 14, paddingTop: 7 },
                 tabBarIconStyle: { paddingBottom: 10 },
                 tabBarStyle: { padding: 18, backgroundColor: '#000002', borderBlockColor: '#000002', height: 60 },
+                headerShown:false,
                 headerStyle: {
                     backgroundColor: '#000002',
                     shadowColor: 'transparent',
@@ -88,71 +94,28 @@ function TabNavigator() {
 function StackNavigator() {
     return (
         <Stack.Navigator
-            initialRouteName="Tabs"
+            initialRouteName="Landing"
             screenOptions={{
-                headerShown: false,
+                headerShown: true,
+                headerStyle:{
+                    backgroundColor:'#000',
+                },
+                headerTitleAlign:'center',
+                headerTitle:()=><Image source={require('../../assets/zerofrictionbanner.png')} style={{ width: 330, height: 40 }} />,
+                headerBackVisible:false
+
             }}
+            
         >
+            <Stack.Screen name='Landing' component={Landing} />
             <Stack.Screen name='Tabs' component={TabNavigator} />
-            <Stack.Screen name='Home' component={Home} />
-            <Stack.Screen name='Resources' component={Resources} />
-            <Stack.Screen name='Support' component={Support} />
-            <Stack.Screen name='Settings' component={Settings} />
+            <Stack.Screen name='Terms' component={Terms} />
+            <Stack.Screen name='Privacy' component={Privacy} />
+            <Stack.Screen name='GolfCourse' component={GolfCourse} />
         </Stack.Navigator>
     )
 }
 
-const HomeStack = () => {
-    return (
-        <Stack.Navigator
-            screenOptions={{ headerShown: false }}
-        >
-            <Stack.Screen
-                name="home"
-                component={Home}
-            />
-        </Stack.Navigator>
-    );
-}
-
-const ResourcesStack = () => {
-    return (
-        <Stack.Navigator
-            screenOptions={{ headerShown: false }}
-        >
-            <Stack.Screen
-                name="resources"
-                component={Resources}
-            />
-        </Stack.Navigator>
-    );
-}
-
-const SupportStack = () => {
-    return (
-        <Stack.Navigator
-            screenOptions={{ headerShown: false }}
-        >
-            <Stack.Screen
-                name="support"
-                component={Support}
-            />
-        </Stack.Navigator>
-    );
-}
-
-const SettingsStack = () => {
-    return (
-        <Stack.Navigator
-            screenOptions={{ headerShown: false }}
-        >
-            <Stack.Screen
-                name="settings"
-                component={Settings}
-            />
-        </Stack.Navigator>
-    );
-}
 
 
 const AppContainer = () => {
@@ -165,4 +128,3 @@ const AppContainer = () => {
 
 export default AppContainer;
 
-//Difference between Tab and Stack Navigator?? Line 161. We removed all parts of the drawer navigator (headerLeft)
