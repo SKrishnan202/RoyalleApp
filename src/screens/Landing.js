@@ -1,39 +1,44 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Platform } from 'react-native';
 import { GradientText } from '../components/GradientText';
 
 export default function App({ navigation }) {
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.navigate('Tabs')}>
-        <GradientText text="ENTER" style={{ fontSize: 60 }} />
-      </TouchableOpacity>
-      <Image source={require('../../assets/zerofrictionglove.png')} style={{ width: 195, height: 300, alignSelf: 'center' }} />
-      <View style={styles.banner}>
-        <View style={styles.banner1}>
-          <View style={styles.banner2}>
-            <Image source={require('../../assets/gpsglove.png')} style={{ width: 330, height: 90, alignSelf: 'center', marginTop: 10 }} />
-          </View>
-        </View>
+      <View style={{height:'5%'}}>
+
+      </View>
+      <View>
+        <TouchableOpacity onPress={() => navigation.navigate('Tabs')}>
+          <GradientText text="ENTER" style={{ fontSize: 60 }} />
+        </TouchableOpacity>
+        <Image source={require('../../assets/zerofrictionglove.png')} style={{ width: 195, height: 300, alignSelf: 'center' }} />
       </View>
 
       <View style={styles.bottom}>
-        
-      <TouchableOpacity
-        onPress={() => navigation.navigate('Terms')}
-        activeOpacity={0.5}>
-        <Text style={styles.buttonTextStyle}>
-          TERMS AND CONDITIONS
-        </Text>
-      </TouchableOpacity>
+        <View style={styles.banner}>
+          <View style={styles.banner1}>
+            <View style={styles.banner2}>
+              <Image source={require('../../assets/gpsglove.png')} style={{ width: 330, height: 90, alignSelf: 'center', marginTop: 10 }} />
+            </View>
+          </View>
+        </View>
 
-      <TouchableOpacity
-        onPress={() => navigation.navigate('Privacy')}
-        activeOpacity={0.5}>
-        <Text style={styles.buttonTextStyle}>
-          PRIVACY POLICY
-        </Text>
-      </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Terms')}
+          activeOpacity={0.5}>
+          <Text style={styles.buttonTextStyle}>
+            TERMS AND CONDITIONS
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Privacy')}
+          activeOpacity={0.5}>
+          <Text style={styles.buttonTextStyle}>
+            PRIVACY POLICY
+          </Text>
+        </TouchableOpacity>
       </View>
 
 
@@ -46,13 +51,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#000000',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
   },
   banner: {
     backgroundColor: '#ffffff',
     height: 130,
     width: 370,
     marginTop: 10,
+    marginBottom: 10
   },
   buttonTextStyle: {
     //  fontFamily: 'Arial',
@@ -60,6 +66,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     textAlign: 'center',
     fontWeight: 'bold',
+    margin:10
   },
   banner1: {
     backgroundColor: '#ffffff',
@@ -85,11 +92,12 @@ const styles = StyleSheet.create({
     marginTop: 7,
     fontWeight: 'bold'
   },
-  bottom:{
-    width:'99%',
-    marginTop:20,
-    flexDirection:'row',
-    justifyContent:'space-around',
+  bottom: {
+    width: '99%',
+    marginTop: 20,
+    //flexDirection:'row',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });
 

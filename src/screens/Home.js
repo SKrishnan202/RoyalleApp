@@ -8,15 +8,20 @@ const Home = ({ navigation }) => {
 
   return (
     <Container>
-      <View style={styles.container}>
-        <View style={styles.banner4}>
-          <View style={styles.banner3}>
-            <Text style={styles.bannerText}>Legacy Hills Golf Club</Text>
+      <View style={[styles.container, { flex: 1, justifyContent: 'space-between' }]}>
+        <View>
+          <View style={styles.banner4}>
+            <View style={styles.banner3}>
+              <Text style={styles.bannerText}>Legacy Hills Golf Club</Text>
+            </View>
           </View>
         </View>
-        <GradientButton onPress={() => navigation.navigate('GolfCourse')}>PLAY GOLF</GradientButton>
-        <GradientButton>REGISTER</GradientButton>
-        <GradientButton>DISTANCE PRO SHOP</GradientButton>
+        <View>
+          <GradientButton onPress={() => navigation.navigate('GolfCourse')}>PLAY GOLF</GradientButton>
+          <GradientButton>REGISTER</GradientButton>
+          <GradientButton>DISTANCE PRO SHOP</GradientButton>
+        </View>
+
 
         <View style={styles.banner1}>
           <View style={styles.banner2}>
