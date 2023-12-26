@@ -5,7 +5,8 @@ export const styles = StyleSheet.create({
     container: {
         backgroundColor: '#000000',
         padding: 25,
-        justifyContent:'center'
+        justifyContent:'center',
+        alignItems:'center'
     },
     contentContainerStyle: {
         paddingHorizontal: 4,
