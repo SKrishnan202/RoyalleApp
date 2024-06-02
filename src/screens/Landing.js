@@ -10,11 +10,11 @@ export default function App({ navigation }) {
       </View>
       <View>
         <TouchableOpacity onPress={() => navigation.navigate('Tabs')}>
-          <GradientText text="ENTER" style={{ fontSize: 60 }} />
+          <GradientText text="ENTER" style={{ fontSize: 50, alignSelf: 'center' }} />
         </TouchableOpacity>
-        <Image source={require('../../assets/zerofrictionglove.png')} style={{ width: 195, height: 300, alignSelf: 'center' }} />
+        <Image source={require('../../assets/couple.png')} style={{ width: 310, height: 250, alignSelf: 'center' }} />
       </View>
-
+{/*
       <View style={styles.bottom}>
         <View style={styles.banner}>
           <View style={styles.banner1}>
@@ -23,6 +23,7 @@ export default function App({ navigation }) {
             </View>
           </View>
         </View>
+  */}
 
         <TouchableOpacity
           onPress={() => navigation.navigate('Terms')}
@@ -41,15 +42,13 @@ export default function App({ navigation }) {
         </TouchableOpacity>
       </View>
 
-
-    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000000',
+    backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'space-between',
   },
@@ -62,7 +61,7 @@ const styles = StyleSheet.create({
   },
   buttonTextStyle: {
     //  fontFamily: 'Arial',
-    color: '#ffffff',
+    color: '#000000',
     fontSize: 15,
     textAlign: 'center',
     fontWeight: 'bold',
@@ -76,6 +75,14 @@ const styles = StyleSheet.create({
     borderColor: '#989898',
     alignSelf: 'center',
     marginTop: 5,
+  },
+  bot: {
+    borderColor: '#0C8081',
+    height: 200,
+    width: 200,
+    borderRadius: 50,
+    alignSelf: 'right',
+    borderWidth: 4,
   },
   banner2: {
     backgroundColor: '#ffffff',

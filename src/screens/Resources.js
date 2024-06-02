@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, TouchableOpacity, Linking } from 'react-native';
+import { View, Image, TouchableOpacity, Linking, Text } from 'react-native';
 import Container from '../components/Container';
 import GradientButton from '../components/GradientButton';
 import { styles } from './styles'
@@ -8,32 +8,33 @@ import {
   faBluetoothB,
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faRobot } from '@fortawesome/free-solid-svg-icons';
 
 const Resources = () => {
-
-  const bIcon = <FontAwesomeIcon icon={faBluetoothB} size={40} color={'white'} style={{ marginRight: 15, marginLeft: -20 }} />;
-  {/* <Image source={require('../../assets/bluetooth.png')} style={{ width: 35, height: 50, marginLeft: 15, marginRight: 15 }} /> */ }
 
   return (
     <Container>
       <View style={[styles.container, { flex: 1, justifyContent: 'space-between' }]}>
         <View>
-          <GradientButton icon={bIcon}>PAIR DEVICE</GradientButton>
-          <GradientButton textStyle={{ fontSize: 17 }} onPress={() => Linking.openURL('https://zerofriction.com/rangefinders/distance-pro-gps-gloves/distance-pro-gps-glove-faqs-trouble-shooting-guide')}>
-            FAQs and TROUBLESHOOTING GUIDE
-          </GradientButton>
-          <GradientButton textStyle={{ fontSize: 17 }} onPress={() => Linking.openURL('https://zerofriction.com/rangefinders/distance-pro-gps-gloves/distance-pro-gps-glove-user-manual')}>
-            BASIC INSTRUCTIONS MANUAL
-          </GradientButton>
-          <GradientButton textStyle={{ fontSize: 17 }} onPress={() => Linking.openURL('https://zerofriction.com/rangefinders/distance-pro-gps-gloves/distance-pro-gps-glove-user-manual')}>
-            SUPPLEMENTAL INSTRUCTIONS MANUAL
-          </GradientButton>
-        </View>
-
-        <View style={styles.banner1}>
-          <View style={styles.banner2}>
-            <Image source={require('../../assets/gpsglove.png')} style={{ width: 330, height: 90, alignSelf: 'center', marginTop: 10 }} />
+         
+         <Container style={{ backgroundColor: '#E0E0E0', height: 530, width: 400}}>
+          <View style={{ borderColor: 'gray', borderWidth: 2, borderRadius: 50, height: 40, width: 300, alignItems: 'center'}}>
+            <Text style={{ color: '#000000', fontSize: 18}}>
+              Hi, how can I help you today?
+            </Text>
           </View>
+          <View style={{ borderColor: 'gray', borderWidth: 2, borderRadius: 50, height: 50, width: 300, alignItems: 'left', paddingLeft: 12}}>
+            <Text style={{ color: '#000000', fontSize: 18}}>
+              I'm looking for....
+            </Text>
+          </View>
+
+          <TouchableOpacity>
+          <GradientButton styles>
+            Chat Bot <FontAwesomeIcon icon={faRobot} size={20} color={'#ffffff'} />
+          </GradientButton>
+          </TouchableOpacity>
+          </Container>
         </View>
 
 
@@ -43,4 +44,7 @@ const Resources = () => {
 }
 
 export default Resources;
+
+
+// rename to AI
 

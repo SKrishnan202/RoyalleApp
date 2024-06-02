@@ -31,7 +31,7 @@ const GradientButton = ({
 
 const styles = StyleSheet.create({
     text: {
-        fontSize: 20,
+        fontSize: 12,
         textAlign: 'center',
         color: '#ffffff',
         fontWeight: 'bold',
@@ -39,20 +39,22 @@ const styles = StyleSheet.create({
     buttonContainer: {
         borderColor: '#aeaaaa',
         borderWidth: 4,
-        height: 70,
-        width: 320,
+        height: 55,
+        width: 102,
         borderRadius: 50,
-        margin: 20,
+        margin: 2,
     },
-    buttonOverContainer: {
+ /*
+     buttonOverContainer: {
         borderColor: '#a43e4a',
-        borderWidth: 2,
-        height: 63,
-        width: 313,
-        borderRadius: 45,
+        borderWidth: 4,
+        height: 55,
+        width: 102,
+        borderRadius: 50,
         alignItems:'center',
         justifyContent:'center'
     },
+    */
 })
 
 

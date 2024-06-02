@@ -5,10 +5,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
     faGear,
-    faScrewdriverWrench,
     faHome,
-    faHeadphones,
     faBackward,
+    faRobot,
+    faUserFriends,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import Home from '../screens/Home';
@@ -64,18 +64,18 @@ function TabNavigator() {
             />
             <BottomTabs.Screen name="Tab2" component={Resources}
                 options={{
-                    headerTitle: 'RESOURCES',
-                    tabBarLabel: 'Resources',
+                    headerTitle: 'AI',
+                    tabBarLabel: 'AI',
                     tabBarIcon: ({ color, size }) => (
-                        <FontAwesomeIcon icon={faScrewdriverWrench} size={size} color={color} />
+                        <FontAwesomeIcon icon={faRobot} size={size} color={color} />
                     ),
                 }} />
             <BottomTabs.Screen name="Tab3" component={Support}
                 options={{
-                    headerTitle: 'SUPPORT',
-                    tabBarLabel: 'Support',
+                    headerTitle: 'MATCHES',
+                    tabBarLabel: 'Matches',
                     tabBarIcon: ({ color, size }) => (
-                        <FontAwesomeIcon icon={faHeadphones} size={size} color={color} />
+                        <FontAwesomeIcon icon={faUserFriends} size={size} color={color} />
                     ),
                 }} />
                 <BottomTabs.Screen name="Tab6" component={Settings}
@@ -98,10 +98,10 @@ function StackNavigator() {
             screenOptions={{
                 headerShown: true,
                 headerStyle:{
-                    backgroundColor:'#000',
+                    backgroundColor:'#ffffff',
                 },
                 headerTitleAlign:'center',
-                headerTitle:()=><Image source={require('../../assets/zerofrictionbanner.png')} style={{ width: 330, height: 40 }} />,
+                headerTitle:()=><Image source={require('../../assets/royallebanner.png')} style={{ width: 330, height: 85 }} />,
                 headerBackVisible:false
 
             }}
